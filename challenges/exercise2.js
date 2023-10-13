@@ -44,10 +44,6 @@ export function checkIngredients(menu, ingredient) {
   let isIngredient = false;
 
   for (let i = 0; i < menu.length; i++) {
-    console.log(menu[i].ingredients);
-
-    console.log(ingredient);
-
     if (menu[i].ingredients.includes(ingredient)) {
       isIngredient = true;
     }
@@ -60,4 +56,39 @@ export function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
   // Your code here!
+
+  //   let duplicated_element = [];
+
+  //   console.log(arr1);
+  //   console.log(arr2);
+
+  //   for (let i = 0; i < arr1.length; i++) {
+  //     for (let j = i; j < arr2.length; j++) {
+  //       if (arr1[i] === arr2[j]) {
+  //         duplicated_element.push(arr1[i]);
+  //       }
+  //     }
+  //   }
+  //   console.log(duplicated_element);
+
+  //   return duplicated_element;
+  // }
+
+  console.log(arr1, arr2);
+  let duplicateNumberArr = [];
+
+  for (let num in arr1) {
+    for (let num2 in arr2) {
+      if (num === num2) {
+        continue;
+      } else {
+        if (arr1[num] === arr2[num2]) {
+          duplicateNumberArr.push(arr1[num]);
+          duplicateNumberArr.sort();
+        }
+      }
+    }
+  }
+  console.log(duplicateNumberArr);
+  return duplicateNumberArr;
 }
