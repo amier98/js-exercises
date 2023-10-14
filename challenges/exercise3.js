@@ -29,7 +29,6 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
   let ints = nums.filter(Number.isInteger);
 
   return ints;
