@@ -50,5 +50,12 @@ export function findSentencesContaining(sentences, str) {
 
 export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  // Your code here
+
+  const newArray = [];
+  let max = 0;
+  for (let i = 0; i < triangles.length; i++) {
+    newArray.push(Math.max(...triangles[i]));
+  }
+
+  return newArray;
 }
