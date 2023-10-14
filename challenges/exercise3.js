@@ -34,12 +34,29 @@ export function getIntegers(nums) {
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  // Your code here
+  const newArray = [];
+  for (let i = 0; i < users.length; i++) {
+    newArray.push(users[i].data.city.displayName);
+  }
+
+  return newArray;
 }
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
+
+  const newArray = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    let square = Math.round(nums[i] * 100) / 100;
+    let square2 = Math.sqrt(nums[i]);
+    if (nums[i] % 1 !== 0) {
+      newArray.push(Number(nums[i]));
+    }
+  }
+
+  return newArray;
 }
 
 export function findSentencesContaining(sentences, str) {
