@@ -6,7 +6,18 @@ export const findNextNumber = (nums, n) => {
 
 export const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+
+  const object = { 1: 0, 0: 0 };
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "0") {
+      object[0] += 1;
+    } else if (str[i] === "1") {
+      object[1] += 1;
+    }
+  }
+  console.log(object);
+  return object;
 };
 
 export const reverseNumber = (n) => {
