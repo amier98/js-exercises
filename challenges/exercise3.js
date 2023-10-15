@@ -29,7 +29,6 @@ export function findVerbs(words) {
   for (let i = 0; i < words.length; i++) {
     if (words[i].match(/(^|\W)to($|\W)/)) {
       newArray.push(words[i]);
-    } else {
     }
   }
 
@@ -73,7 +72,15 @@ export function getSquareRoots(nums) {
 export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+
+  const newArray = [];
+
+  for (let i = 0; i < sentences.length; i++) {
+    if (sentences[i].toLowerCase().includes(str.toLowerCase())) {
+      newArray.push(sentences[i]);
+    }
+  }
+  return newArray;
 }
 
 export function getLongestSides(triangles) {
