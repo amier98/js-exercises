@@ -30,6 +30,16 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+
+  let validDNA = ["C", "G", "A", "T"];
+
+  let isTrue = false;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].includes(validDNA[i])) {
+      isTrue = true;
+    }
+  }
+  return isTrue;
 };
 
 /**
@@ -48,6 +58,16 @@ export const getComplementaryDNA = (str) => {
  */
 export const isItPrime = (n) => {
   if (n === undefined) throw new Error("n is required");
+  //prime number is only divisable by itself or 1
+  let isPrime = true;
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      isPrime = false;
+    }
+  }
+
+  return isPrime;
 };
 
 /**
@@ -64,6 +84,16 @@ export const isItPrime = (n) => {
 export const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
+
+  const newArray = new Array(n);
+  console.log(newArray);
+
+  for (let i = 0; i < n; i++) {
+    newArray.fill(fill, 0, n);
+    console.log(newArray);
+  }
+
+  return newArray;
 };
 
 /**
@@ -89,6 +119,5 @@ export const areWeCovered = (staff, day) => {
       number++;
     }
   }
-
   return number >= 3;
 };
