@@ -47,7 +47,13 @@ export const sumArrays = (arrs) => {
 
 export const arrShift = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+  let first = arr[0];
+
+  arr[0] = arr[arr.length - 1];
+
+  arr[arr.length - 1] = first;
+
+  return arr;
 };
 
 export const findNeedle = (haystack, searchTerm) => {
@@ -65,7 +71,6 @@ export const findNeedle = (haystack, searchTerm) => {
       check[i].toLowerCase().includes(searchTerm.toLowerCase())
     ) {
       foundNeedle = true;
-      console.log(searchTerm);
     }
   }
 
