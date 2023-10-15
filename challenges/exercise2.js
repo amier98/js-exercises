@@ -12,13 +12,15 @@ export function getSquares(nums) {
 
 export function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  //   const newArray = [];
-
-  //   for (let i = 1; i < words.length; i++) {
-  //     const word = words[i].slice(1);
-  //     newArray.push(word);
-  //     console.log(word);
-  //   }
+  //im still stuck on this one
+  for (let i = 0; i < words.length; i++) {
+    // words[i] = nextWord + words[i].substr(1);
+    if (words[i] > 1) {
+      words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+      console.log(words[i]);
+    }
+  }
+  return words.join("");
 }
 
 export function getTotalSubjects(people) {
@@ -55,40 +57,15 @@ export function checkIngredients(menu, ingredient) {
 export function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
-
-  //   let duplicated_element = [];
-
-  //   console.log(arr1);
-  //   console.log(arr2);
+  // have not been able to finish this one either
+  let duplicateNumberArr = [];
 
   //   for (let i = 0; i < arr1.length; i++) {
-  //     for (let j = i; j < arr2.length; j++) {
+  //     for (let j = i; i < arr2.length; j++) {
   //       if (arr1[i] === arr2[j]) {
-  //         duplicated_element.push(arr1[i]);
+  //         duplicateNumberArr.push(arr1[i]);
   //       }
   //     }
   //   }
-  //   console.log(duplicated_element);
-
-  //   return duplicated_element;
-  // }
-
-  console.log(arr1, arr2);
-  let duplicateNumberArr = [];
-
-  for (let num in arr1) {
-    for (let num2 in arr2) {
-      if (num === num2) {
-        continue;
-      } else {
-        if (arr1[num] === arr2[num2]) {
-          duplicateNumberArr.push(arr1[num]);
-          duplicateNumberArr.sort();
-        }
-      }
-    }
-  }
-  console.log(duplicateNumberArr);
   return duplicateNumberArr;
 }

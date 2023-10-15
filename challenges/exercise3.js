@@ -59,11 +59,8 @@ export function getSquareRoots(nums) {
   const newArray = [];
 
   for (let i = 0; i < nums.length; i++) {
-    let square = Math.round(nums[i] * 100) / 100;
-    let square2 = Math.sqrt(nums[i]);
-    if (nums[i] % 1 !== 0) {
-      newArray.push(Number(nums[i]));
-    }
+    let square = Math.sqrt(nums[i]) + Math.sqrt(nums[i].toFixed(2));
+    newArray.push(square);
   }
 
   return newArray;
