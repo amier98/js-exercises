@@ -1,7 +1,25 @@
 export const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+
+  let nextNum;
+  let lastIndex = nums[nums.length - 1];
+
+  for (let i = 0; i < nums.length; i++) {
+    let currentElement = nums[i + 1];
+    if (nums[i] === n) {
+      nextNum = nextNum || currentElement;
+      break;
+    }
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (lastIndex === n || nums[i] !== n) {
+      nextNum = nextNum || null;
+    }
+  }
+
+  return nextNum;
 };
 
 export const count1sand0s = (str) => {
