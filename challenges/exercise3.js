@@ -13,28 +13,14 @@ export function findSmallNums(nums) {
 export function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-
+  //removed for loop and used filter function
   return names.filter((start) => start.includes(char));
-  // const newArray = [];
-  // for (let i = 0; i < names.length; i++) {
-  //   if (names[i].includes(char)) {
-  //     newArray.push(names[i]);
-  //   }
-  // }
-  // return newArray;
 }
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
 
-  const newArray = [];
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].match(/(^|\W)to($|\W)/)) {
-      newArray.push(words[i]);
-    }
-  }
-
-  return newArray;
+  return words.filter((verb) => verb.match(/(^|\W)to($|\W)/));
 }
 
 export function getIntegers(nums) {
