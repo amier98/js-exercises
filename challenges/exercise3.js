@@ -19,7 +19,7 @@ export function findNamesBeginningWith(names, char) {
 
 export function findVerbs(words) {
   if (!words) throw new Error("words is required");
-
+  //removed the for loop here as well
   return words.filter((verb) => verb.match(/(^|\W)to($|\W)/));
 }
 
@@ -47,14 +47,17 @@ export function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
 
-  const newArray = [];
+  return sentences.filter((senten) =>
+    senten.toLowerCase().includes(str.toLowerCase())
+  );
+  // const newArray = [];
 
-  for (let i = 0; i < sentences.length; i++) {
-    if (sentences[i].toLowerCase().includes(str.toLowerCase())) {
-      newArray.push(sentences[i]);
-    }
-  }
-  return newArray;
+  // for (let i = 0; i < sentences.length; i++) {
+  //   if (sentences[i].toLowerCase().includes(str.toLowerCase())) {
+  //     newArray.push(sentences[i]);
+  //   }
+  // }
+  // return newArray;
 }
 
 export function getLongestSides(triangles) {
