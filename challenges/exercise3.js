@@ -37,33 +37,22 @@ export function findVerbs(words) {
 
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  let ints = nums.filter(Number.isInteger);
-
-  return ints;
+  //removed unnecessary variable
+  return nums.filter(Number.isInteger);
 }
 
 export function getCities(users) {
   if (!users) throw new Error("users is required");
-  const newArray = [];
-  for (let i = 0; i < users.length; i++) {
-    newArray.push(users[i].data.city.displayName);
-  }
 
-  return newArray;
+  return users.map((person) => {
+    return person.data.city.displayName;
+  });
 }
 
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
 
-  const newArray = [];
-
-  for (let i = 0; i < nums.length; i++) {
-    let square = Math.sqrt(nums[i]) + Math.sqrt(nums[i].toFixed(2));
-    newArray.push(square);
-  }
-
-  return newArray;
+  return nums.map((num) => num % 1 != 0);
 }
 
 export function findSentencesContaining(sentences, str) {
