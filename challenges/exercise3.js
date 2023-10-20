@@ -1,13 +1,7 @@
 export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
 
-  const newArray = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] < 1) {
-      newArray.push(nums[i]);
-    }
-  }
-  return newArray;
+  return nums.filter((small) => small < 1);
 }
 
 export function findNamesBeginningWith(names, char) {
@@ -50,14 +44,6 @@ export function findSentencesContaining(sentences, str) {
   return sentences.filter((senten) =>
     senten.toLowerCase().includes(str.toLowerCase())
   );
-  // const newArray = [];
-
-  // for (let i = 0; i < sentences.length; i++) {
-  //   if (sentences[i].toLowerCase().includes(str.toLowerCase())) {
-  //     newArray.push(sentences[i]);
-  //   }
-  // }
-  // return newArray;
 }
 
 export function getLongestSides(triangles) {
