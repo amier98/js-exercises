@@ -1,16 +1,16 @@
-export function getFillings(sandwich) {
+export function getFillings(sandwich: any) {
   if (sandwich === undefined) throw new Error("ingredients is required");
   //removed unnecessary variable
   return sandwich.fillings;
 }
 
-export function isFromManchester(person) {
+export function isFromManchester(person: any) {
   if (person === undefined) throw new Error("person is required");
   //removed the unnecessary true and false returns
   return person.city === "Manchester";
 }
 
-export function getBusNumbers(people) {
+export function getBusNumbers(people): number {
   if (people === undefined) throw new Error("people is required");
   const buses = Math.ceil(people / 40);
   if (people <= 40) {
@@ -24,7 +24,7 @@ export function getBusNumbers(people) {
   }
 }
 
-export function countSheep(arr) {
+export function countSheep(arr): any {
   if (arr === undefined) throw new Error("arr is required");
 
   const newArray = [];
